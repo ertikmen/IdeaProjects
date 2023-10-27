@@ -1,0 +1,27 @@
+server:
+  port: 7075
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java10
+    password: 123
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+    service:
+      name: mail-service
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${java10_mail}
+    password: ${java_mail_password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+rabbitmq:
+  mail-queue: mail-queue

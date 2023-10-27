@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.ertikmen.model.Customer" table="CUSTOMER">
+
+        <id name ="id" type="int">
+            <column name = "ID"  not-null= "false"/>
+            <generator class="identity" />
+        </id>
+
+        <property name="firstname" type="string" >
+            <column name = "FIRST_NAME"  length ="40" not-null = "false"/>
+        </property>
+
+        <property name="lastname" type="string" >
+            <column name = "LAST_NAME"  length ="60"/>
+        </property>
+
+        <property name="address" type="string" >
+            <column name = "ADDRESS"  length ="30"/>
+        </property>
+
+        <property name="creationDate" type="date" >
+            <column name = "CREATION_DATE"/>
+        </property>
+
+    </class>
+
+</hibernate-mapping>

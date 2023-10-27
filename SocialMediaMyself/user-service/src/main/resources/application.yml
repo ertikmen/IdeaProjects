@@ -1,0 +1,13 @@
+server:
+  port: 5051
+
+spring:
+  datasource:
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/user-service-DB
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create

@@ -1,0 +1,7 @@
+dependencies {
+    /**
+     * Bu sub module için gerekli olan kütüphaneleri ekledik.
+     */
+    implementation libs.postgreSql
+    implementation libs.springBootJpa
+}

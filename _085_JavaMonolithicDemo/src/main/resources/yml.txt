@@ -1,0 +1,7 @@
+# öncelikle parametre ardından : (iki nokta üst üste ve bir boşluk bıraktıktan sonra da değer girilir.
+# Eğerğ boşluk bırakmazsanız hata alırısnız.
+
+#alt kırılımlarda bir tab boşluk olmalıdır.
+#girintiler önemlidir.
+
+#bu dosya projenizle alakalı genel ayarların tutulduğu dosyadır.

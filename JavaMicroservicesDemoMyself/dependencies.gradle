@@ -1,0 +1,29 @@
+ext {
+    versions = [
+            springBoot: "2.7.9",
+            postgreSql: "42.5.4",
+            lombok    : "1.18.26",
+            mapStruct : "1.5.5.Final",
+            openApi   : "1.6.14"
+
+    ]
+    libs = [
+            // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+            springBootWeb     : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+            // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+            springBootJpa     : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
+            // https://mvnrepository.com/artifact/org.postgresql/postgresql
+            postgreSql        : "org.postgresql:postgresql:$versions.postgreSql",
+            // https://mvnrepository.com/artifact/org.projectlombok/lombok
+            lombok            : "org.projectlombok:lombok:$versions.lombok",
+            // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
+            mapStruct         : "org.mapstruct:mapstruct:$versions.mapStruct",
+            // https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor
+            mapStructProcessor: "org.mapstruct:mapstruct-processor:$versions.mapStruct",
+            // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+            openApi           : "org.springdoc:springdoc-openapi-ui:$versions.openApi"
+
+
+    ]
+
+}

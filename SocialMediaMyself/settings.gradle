@@ -1,0 +1,4 @@
+rootProject.name = 'SocialMediaMyself'
+include 'auth-service'
+include 'user-service'
+

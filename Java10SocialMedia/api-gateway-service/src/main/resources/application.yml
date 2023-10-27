@@ -1,0 +1,48 @@
+server:
+  port: 80
+
+spring:
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+    service:
+      name: api-gateway-service
+  main:
+    web-application-type: reactive
+  application:
+    name: api-gateway-service
+  cloud:
+    globalcors:
+      cors-configurations:
+        '[/**]':
+          allowed-origins: "*"
+          allowed-headers: "*"
+          allowed-methods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+    gateway:
+      routes:
+        - id: auth-service
+          predicates:
+            - Path=/auth/**
+          uri: http://localhost:7071
+          filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+            - name: CircuitBreaker
+              args:
+                enabled: true
+                fallbackUri: forward:/fallback/auth_service
+        - id: auth-service
+          predicates:
+            - Path=/user/**
+          uri: http://localhost:7072
+          filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+            - name: CircuitBreaker
+              args:
+                enabled: true
+                fallbackUri: forward:/fallback/user_service
+      default-filters:
+        - RewritePath= /(?<segment>.*),/api/v1/$\{segment}   #regex***

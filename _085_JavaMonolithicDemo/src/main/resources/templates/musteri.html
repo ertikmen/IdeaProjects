@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Müşteri Sayfası</title>
+    <style>
+        h1{
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${baslik}"></h1>
+<ul>
+    <li th:each="musteri:${musteriliste}"><label th:text="${musteri}"></label> </li>
+</ul>
+<hr>
+
+    <h2 th:text="${modelkey.getBaslik()}"/>
+
+<ul>
+    <li th:each="musteri:${modelkey.getMusteriListesi()}"><label th:text="${musteri}"></label> </li>
+</ul>
+<h3 th:text="${modelkey.getAdres()}"></h3>
+</body>
+</html>

@@ -1,0 +1,6 @@
+rootProject.name = 'MicroserviceMyself'
+include 'auth-service'
+include 'config-server'
+include 'config-server'
+include 'git-config-server'
+

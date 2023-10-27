@@ -1,0 +1,47 @@
+server:
+  port: 7072
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java10
+    password: 123
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+    service:
+      name: user-server
+#  datasource:
+#    username: postgres
+#    password: root
+#    url: jdbc:postgresql://localhost:5432/java10SocialUser
+#    driver-class-name: org.postgresql.Driver
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: java10user
+      password: root
+      database: userDb
+jwt:
+  secretKey: ${java10secretkey}
+  issuer: ${java10issuer}
+rabbitmq:
+  register-queue: register-queue
+  register-elastic-queue: register-elastic-queue
+  register-elastic-binding: register-elastic-binding
+  activation-queue: activation-queue
+  user-exchange: user-exchange
+
+redis:
+  host: localhost
+  port: 6379
+
+logging:
+  level:
+    root: info
+  file:
+    name: "C:/Users/engin/OneDrive/Masaüstü/Yeni/user.log"
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
